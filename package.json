@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon --ignore 'data/*.json' source/server.ts",
     "build": "rm -rf build/ && prettier --write source/ && tsc",
-    "start": "node build/server.js"
+    "start": "npm run build && node build/server.js"
   },
   "keywords": [],
   "license": "ISC",
