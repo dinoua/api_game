@@ -1,4 +1,4 @@
-const url_api = 'http://localhost:6060';
+const url_api = 'https://api-game-dino.herokuapp.com';
 
 function output(inp) {
     document.body.appendChild(document.createElement('pre')).innerHTML = inp;
@@ -45,6 +45,7 @@ function check (username) {
                 if (data.response.state.type != 'play') {
                     $('.main').hide();
                     $('.play').show();
+                    $('.in_game').hide();
                 } else {
                     $('.main').hide();
                     $('.play').hide();
@@ -114,6 +115,10 @@ $(document).ready(() => {
                 } else {
                     check(username);
                 }
+
+                $('#stamina_info').html(
+                    `Stamina: ${data.response.stamina.current}/${data.response.stamina.max}, Last update: ${new Date(data.response.stamina.time_last_add * 1000)}`
+                );
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 output(syntaxHighlight(`[server][answer][${xhr.status}]`));
@@ -212,7 +217,7 @@ $(document).ready(() => {
         });
     });
 
-    $('#game_exit').click(function() {
+    const game_exit = () => {
         let url = `${url_api}/api/game/leave`;
         let player_id = localStorage.getItem('player_id');
 
@@ -249,7 +254,10 @@ $(document).ready(() => {
                 output(syntaxHighlight(str));
             }
         });
-    });
+    }
+
+    $('#game_exit').click(game_exit);
+    $('#game_lose').click(game_exit);
 
     $('#game_win').click(function() {
         let url = `${url_api}/api/game/win`;
