@@ -73,7 +73,14 @@ const reset_stamina = async (stamina: Stamina): Promise<Stamina> => {
   return stamina;
 };
 
+/**
+ * Stamina recovery check
+ * @param players Players[]
+ * @returns 
+ */
 const check_stamina = async (players: Players[]) => {
+  console.log('[stamina][check_stamina] Stamina recovery check');
+
   try {
     return players.forEach(async (player: Players) => {
       if (player.stamina.time_last_add > 0) {
