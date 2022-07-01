@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test API</title>
+
+    <style>
+        pre {
+            outline: 1px solid #ccc; 
+            padding: 5px; 
+            margin: 5px; 
+            word-break: break-all;
+        }
+        .string { 
+            color: green; 
+        }
+        .number { 
+            color: darkorange; 
+        }
+        .boolean { 
+            color: blue; 
+        }
+        .null { 
+            color: magenta; 
+        }
+        .key { 
+            color: red; 
+        }
+
+        button {
+            height: 30px;
+        }
+
+        input {
+            border: 1px solid;
+            height: 20px;
+            width: 300px;
+            padding: 5px;
+        }
+
+        .menu {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main menu">
+        <input id="join_input_username" placeholder="input username">
+        <input id="join_input_name" placeholder="input your name">
+        <button id="join_game">Join to game</button>
+    </div>
+    <div class="play menu" style="display: none;">
+        <button id="game_play">Play</button>
+
+        <span id="stamina_info"></span>
+        <span id="stamina_repair"></span>
+    </div>
+    <div class="in_game menu" style="display: none;">
+        <button id="game_replay">Replay</button>
+        <button id="game_exit">Exit</button>
+        <button id="game_win">Win</button>
+        <button id="game_exit">Lose</button>
+
+        <span id="level_id"></span>
+    </div>
+    <div>
+        <button id="all_players">All players</button>
+        <input id="input_by_username" placeholder="input username">
+        <button id="find_by_username">Find player by username</button>
+        <button id="logout">Logout</button>
+        <button id="reload_page">Reload page</button>
+        <button id="clear_log">Clear logs</button>
+    </div>
+
+    <div id="log"></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+</html>
