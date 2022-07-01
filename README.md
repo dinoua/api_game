@@ -32,7 +32,7 @@ npm run dev
 ```
 #### Сборка и деплойд проекта
 Разработка в реальном времени:
-
+git remote add origin https://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@github.com/dinoua/api_game.git
 ```sh
 npm run dev
 ```
