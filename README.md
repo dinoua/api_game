@@ -1,5 +1,7 @@
 # API server for game
 
+Документация API: https://documenter.getpostman.com/view/4703623/UzJERJuR
+
 ## Возможности
 
 - Создание/Вход под аккаунт игрока
